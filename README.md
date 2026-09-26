@@ -68,7 +68,7 @@ When we ask an LLM a question, it does not just “know one answer.” It predic
     Prompt = what We ask
     Generation parameters = how the model answers
 
-    | Parameter | Simple Meaning | When To Use |
+| Parameter | Simple Meaning | When To Use |
 |---|---|---|
 | `temperature` | Controls randomness/creativity | Low for factual answers, higher for brainstorming |
 | `top_p` | Controls how many likely words the model can choose from | Usually keep around `0.9` |
