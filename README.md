@@ -78,4 +78,21 @@ When we ask an LLM a question, it does not just “know one answer.” It predic
 | `presence_penalty` | Encourages new ideas/topics | Use for brainstorming |
 | `stop sequence` | Tells model where to stop | Use for structured output |
 
+`Best Settings To Remember`
+*For factual learning, coding, MOF explanation, README notes:*
 
+* temperature = 0.2
+* top_p = 0.9
+* max_tokens = 300
+
+*For brainstorming project ideas:*
+* temperature = 0.8
+* top_p = 0.95
+* max_tokens = 500
+
+*For very consistent output/testing:*
+
+* temperature = 0
+
+### Nebius Token Factory
+Nebius Token Factory is your all-in-one platform for working with large language models (LLMs) — from quick experimentation to production deployment. Test and compare models in an intuitive playground, or integrate them into your applications via an OpenAI-compatible API for inference and fine-tuning, and extend capabilities through seamless integrations with popular frameworks.
