@@ -96,3 +96,52 @@ When we ask an LLM a question, it does not just “know one answer.” It predic
 
 ### Nebius Token Factory
 Nebius Token Factory is your all-in-one platform for working with large language models (LLMs) — from quick experimentation to production deployment. Test and compare models in an intuitive playground, or integrate them into your applications via an OpenAI-compatible API for inference and fine-tuning, and extend capabilities through seamless integrations with popular frameworks.
+#  Retrieval-Augmented Generation (RAG) 
+
+The Illusion of Omniscience: The main problem with LLM creates illusion about knowing everything.every single detail is completely fabricated.
+###  Three Fundamental Limitations
+- Limitation 1: The Knowledge Cutoff
+LLMs learn from training data collected at a specific point in time. Everything after that date is invisible to them.
+- Limitation 2: Hallucination
+When LLMs do not know something, they often do not admit it. Instead, they generate plausible-sounding but entirely fictional content. Researchers call this hallucination.
+- Limitation 3: No Access to Private Data
+
+| Limitation | Business Impact |
+|---|---|
+| Knowledge cutoff | Cannot answer questions about recent events, decisions, or changes |
+| Hallucination | Users receive false information presented with false confidence |
+| No private data access | Cannot help with organization-specific questions |
+
+# Introducing RAG: Retrieval-Augmented Generation
+Retrieval-Augmented Generation (RAG) solves these problems with an elegant insight: instead of making the LLM store all knowledge internally, give it the ability to look up information when needed
+
+`RAG works in three steps:`
+
+- Step 1: Retrieve relevant information from an external knowledge source based on the user's question
+
+- Step 2: Augment the prompt by adding this retrieved information as context
+
+- Step 3: Generate a response using both the LLM's capabilities and the retrieved information
+
+`The Components of a RAG System`
+* Building a RAG system requires several components working together:
+
+* Knowledge Base: The collection of documents, articles, records, or other information you want the LLM to access. This could be company documentation, product manuals, research papers, or any text-based content.
+
+* Embedding Model: Converts text into numerical vectors that capture semantic meaning. These vectors enable searching by meaning rather than just keyword matching.
+
+* Vector Database: Stores the embedded vectors and enables fast similarity search. When a query comes in, the vector database finds documents with similar meaning.
+
+* Retrieval System: Orchestrates the process of taking a query, searching the vector database, and returning relevant documents.
+
+LLM: Generates the final response using the retrieved context and its own capabilities.
+
+![alt text](image.png)
+
+**Hugging Face Hub:** A repository hosting over 500,000 models and 100,000 datasets. Anyone can upload models, and anyone can download and use them.  Models from OpenAI, Google, Meta, Microsoft, and thousands of independent researchers can be found there. 
+
+**Transformers Library:** A Python library for loading and using models from the Hub. It provides a consistent interface across thousands of different model architectures.
+
+Datasets Library: Tools for loading, processing, and sharing datasets.
+
+**Additional Libraries:** Specialized tools like sentence-transformers (for embeddings), accelerate (for distributed training), and tokenizers (for fast tokenization).
